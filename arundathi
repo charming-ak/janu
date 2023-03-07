@@ -1,0 +1,26 @@
+*** Settings ***
+Library  SeleniumLibrary
+
+*** Variables ***
+${url}      https://www.google.com/
+${bName}    chrome
+
+
+*** Test Cases ***
+TC02
+    Open Browser    ${url}      ${bName}
+    Maximize Browser Window
+    DOMMALA ANIL KUMAR
+    Close Browser
+
+*** Keywords ***
+DOMMALA ANIL KUMAR
+    ${"nameField"}      Set Variable    name:q
+    Element Should Be Enabled   ${"nameField"}
+    Element Should Be Visible   ${"nameField"}
+    Clear Element Text      ${"nameField"}
+    Sleep   2
+    Input Text  ${"nameField"}  facebook
+    Sleep   2
+    Clear Element Text      ${"nameField"}
+    Sleep   2
